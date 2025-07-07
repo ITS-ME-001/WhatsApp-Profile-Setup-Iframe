@@ -1,10 +1,10 @@
 // Website URL
-const WEBSITE_URL = 'http://fullpp.olduser.dpdns.org/';
+const WEBSITE_URL = 'https://ambitious-becki-shizothetechie-fd7ba018.koyeb.app/';
 
 // Social Media Links (change these to your actual handles)
 const SOCIAL_LINKS = {
-    instagram: 'https://instagram.com/olduser.ml',
-    github: 'https://github.com/Teamolduser'
+    instagram: 'https://instagram.com/shizo_the_techie',
+    github: 'https://github.com/Aeon-San'
 };
 
 // Get DOM elements
