@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>WhatsApp Profile Setup</title>
+  <title>Vertical Stack UI</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -11,13 +11,21 @@
     <iframe id="website-frame" title="Embedded Site"></iframe>
 
     <div class="sidebar left">
-      <button id="github-icon">G</button>
-      <button id="instagram-icon">I</button>
+      <div class="stack github-stack">
+        <div>G</div><div>I</div><div>T</div><div>H</div><div>U</div><div>B</div>
+      </div>
+      <div class="stack instagram-stack">
+        <div>I</div><div>N</div><div>S</div><div>T</div><div>A</div><div>G</div><div>R</div><div>A</div><div>M</div>
+      </div>
     </div>
 
     <div class="sidebar right">
-      <button id="whatsapp-icon">W</button>
-      <button id="whatsapp-icon2">C</button>
+      <div class="stack whatsapp-group-stack">
+        <div>W</div><div>H</div><div>A</div><div>T</div><div>S</div><div>A</div><div>P</div><div>P</div>
+      </div>
+      <div class="stack whatsapp-channel-stack">
+        <div>W</div><div>H</div><div>A</div><div>T</div><div>S</div><div>A</div><div>P</div><div>P</div><div>1</div>
+      </div>
     </div>
 
     <div class="loading-overlay" id="loadingOverlay">
