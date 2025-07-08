@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WhatsApp Profile Setup</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="wrapper">
+    <iframe id="website-frame" title="Embedded Site"></iframe>
+
+    <div class="sidebar left">
+      <button id="github-icon">G</button>
+      <button id="instagram-icon">I</button>
+    </div>
+
+    <div class="sidebar right">
+      <button id="whatsapp-icon">W</button>
+      <button id="whatsapp-icon2">C</button>
+    </div>
+
+    <div class="loading-overlay" id="loadingOverlay">
+      <div class="loading-text">Loading content...</div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
