@@ -3,10 +3,10 @@ const WEBSITE_URL = 'https://ambitious-becki-shizothetechie-fd7ba018.koyeb.app/'
 
 // Social Media Links (change these to your actual handles)
 const SOCIAL_LINKS = {
-    github: 'https://github.com/Aeon-San',
+    github: 'https://github.com/',
     whatsapp: 'https://chat.whatsapp.com/',
     whatsapp2: 'https://chat.whatsapp.com/channel/',
-    instagram: 'https://instagram.com/shizo_the_techie'
+    instagram: 'https://instagram.com/'
 };
 
 // Get DOM elements
