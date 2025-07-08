@@ -3,10 +3,10 @@ const WEBSITE_URL = 'https://ambitious-becki-shizothetechie-fd7ba018.koyeb.app/'
 
 // Social Media Links (change these to your actual handles)
 const SOCIAL_LINKS = {
+    github: 'https://github.com/Aeon-San',
     whatsapp: 'https://chat.whatsapp.com/',
     whatsapp2: 'https://chat.whatsapp.com/channel/',
-    instagram: 'https://instagram.com/shizo_the_techie',
-    github: 'https://github.com/Aeon-San',
+    instagram: 'https://instagram.com/shizo_the_techie'
 };
 
 // Get DOM elements
@@ -67,6 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Setup social media icon click handlers
 function setupSocialIcons() {
+    const githubIcon = document.getElementById('github-icon');
     const whatsappIcon = document.getElementById('whatsapp-icon');
     const whatsappIcon2 = document.getElementById('whatsapp-icon');
     const instagramIcon = document.getElementById('instagram-icon');
