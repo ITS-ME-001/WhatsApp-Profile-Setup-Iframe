@@ -17,7 +17,7 @@ function generateRandomPath(length = 6) {
 const PING_URL = 'https://fullpp.olduser.dpdns.org/kA39rLdZ82XvPqTmY1'; // Change as needed
 
 // Serve static files from public under the random route
-app.use((req, res) => {
+app.use(async (req, res) => {
 const response = await fetch(PING_URL, { timeout: 3000 });
 
      res.status(403).sendFile(path.join(__dirname, '/access/blocked/index.html'));
