@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Access Blocked</title>
+  <style>
+    body {
+      margin: 0;
+      background: #f5f6fa;
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .blocked-box {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      padding: 40px;
+      max-width: 420px;
+      text-align: center;
+    }
+
+    .flag {
+      font-size: 4rem;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      color: #e74c3c;
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .region-message {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .ref {
+      font-size: 0.85rem;
+      color: #888;
+      font-family: monospace;
+      margin-bottom: 20px;
+    }
+
+    a {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #e74c3c;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      background: #c0392b;
+    }
+  </style>
+</head>
+<body>
+  <div class="blocked-box">
+    <div class="flag" id="flag">🌐</div>
+    <h1>Access Blocked</h1>
+    <div class="region-message" id="regionMessage">
+      You are not allowed to access this service from your region.
+    </div>
+    <div class="ref" id="refCode">Ref: UNKNOWN</div>
+    <a href="/">Go Back Home</a>
+  </div>
+
+  <script>
+    // Convert country code to flag emoji
+    function countryCodeToFlagEmoji(countryCode) {
+      if (!countryCode) return "🌐";
+      return countryCode
+        .toUpperCase()
+        .replace(/./g, char => String.fromCodePoint(127397 + char.charCodeAt()));
+    }
+
+    async function detectCountry() {
+      try {
+        const res = await fetch("https://ipapi.co/json/");
+        const data = await res.json();
+
+        const country = data.country_name;
+        const countryCode = data.country;
+        const ip = data.ip;
+
+        const flag = countryCodeToFlagEmoji(countryCode);
+
+        document.getElementById("flag").textContent = flag;
+        document.getElementById("regionMessage").innerText =
+          `Access to this service is restricted in ${country}.`;
+        document.getElementById("refCode").innerText =
+          `Ref: BLOCKED-${countryCode}-${ip}`;
+      } catch (e) {
+        document.getElementById("regionMessage").innerText =
+          "Your region is currently restricted from using this service.";
+        document.getElementById("refCode").innerText = "Ref: BLOCKED-UNK";
+      }
+    }
+
+    detectCountry();
+  </script>
+</body>
+</html>

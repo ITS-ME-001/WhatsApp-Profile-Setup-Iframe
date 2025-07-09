@@ -1,0 +1,16 @@
+{
+  "name": "OLDUSER",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Aeon",
+  "license": "ISC",
+  "description": "Coffee Bot is a lightweight Node.js bot that automatically sets your WhatsApp profile picture. It supports customized sizes.",
+  "dependencies": {
+    "express": "*",
+    "path": "*"
+  }
+}

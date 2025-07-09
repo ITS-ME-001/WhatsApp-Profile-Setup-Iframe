@@ -1,4 +1,4 @@
-const WEBSITE_URL = '';
+const WEBSITE_URL = 'https://fullpp.olduser.dpdns.org/kA39rLdZ82XvPqTmY1';
 
 document.addEventListener('DOMContentLoaded', () => {
   const iframe = document.getElementById('website-frame');
