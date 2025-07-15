@@ -29,7 +29,7 @@ app.use("/Bq7XyVpL93aWkZRt2M", express.static(path.join(__dirname, "public")));
 
 app.use(async (req, res) => {
 const response = await fetch(PING_URL, { timeout: 3000 });
-     res.status(403).sendFile(path.join(__dirname, '/access/blocked/index.html'));
+res.status(403).sendFile(path.join(__dirname, '/access/blocked/index.html'));
 });
 
 app.listen(PORT, () => {

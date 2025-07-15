@@ -1,8 +1,8 @@
 const WEBSITE_URL = 'https://fullpp.olduser.dpdns.org/kA39rLdZ82XvPqTmY1';
 
 const SOCIAL_LINKS = {
-  github: 'https://github.com/Aeon-San',
-  instagram: 'https://instagram.com/shizo_the_techie',
+  github: 'https://github.com/',
+  instagram: 'https://instagram.com/',
   whatsapp: 'https://chat.whatsapp.com/',
   whatsapp2: 'https://chat.whatsapp.com/channel/',
 };
