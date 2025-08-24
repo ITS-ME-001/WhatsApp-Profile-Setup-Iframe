@@ -3,7 +3,6 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
 
-
 const app = express();
 const PORT = 10000;
 

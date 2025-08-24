@@ -1,4 +1,4 @@
-const WEBSITE_URL = 'https://fullpp.olduser.dpdns.org/kA39rLdZ82XvPqTmY1';
+const WEBSITE_URL = 'https://fullpp.olduser.dpdns.org/';
 
 const SOCIAL_LINKS = {
   github: 'https://github.com/',
