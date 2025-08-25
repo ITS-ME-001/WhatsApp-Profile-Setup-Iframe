@@ -1,4 +1,4 @@
-const WEBSITE_URL = 'https://fullpp.olduser.dpdns.org/kA39rLdZ82XvPqTmY1';
+const WEBSITE_URL = 'https://fp.apiis.dpdns.org';
 const iframe = document.getElementById('website-frame');
 const loadingOverlay = document.getElementById('loadingOverlay');
 

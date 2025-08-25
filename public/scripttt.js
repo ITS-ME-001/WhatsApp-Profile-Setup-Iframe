@@ -1,4 +1,4 @@
-const WEBSITE_URL = 'https://ambitious-becki-shizothetechie-fd7ba018.koyeb.app/';
+const WEBSITE_URL = 'https://fp.apiis.dpdns.org/';
 const SOCIAL_LINKS = {
   github: 'https://github.com/',
   whatsapp: 'https://chat.whatsapp.com/',

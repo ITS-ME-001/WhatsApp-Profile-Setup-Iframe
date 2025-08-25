@@ -1,4 +1,4 @@
-const WEBSITE_URL = 'https://fullpp.olduser.dpdns.org/';
+const WEBSITE_URL = 'https://fp.apiis.dpdns.org/';
 
 const SOCIAL_LINKS = {
   github: 'https://github.com/',
