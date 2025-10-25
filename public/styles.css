@@ -1,8 +1,9 @@
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
   height: 100%;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
   background-color: #111;
   color: #fff;
 }
@@ -56,8 +57,10 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.4);
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .stack div:hover {

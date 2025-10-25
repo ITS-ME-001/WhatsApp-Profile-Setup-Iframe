@@ -1,137 +1,147 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Access Blocked - Security Restriction</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Access Blocked - Security Restriction</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-    body {
-      background-color: #f1f3f6;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
+      body {
+        background-color: #f1f3f6;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
 
-    .blocked-container {
-      background: white;
-      padding: 50px 40px;
-      border-radius: 16px;
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.07);
-      text-align: center;
-      max-width: 480px;
-      width: 90%;
-      border-top: 6px solid #e74c3c;
-    }
-
-    .blocked-icon {
-      font-size: 4.5rem;
-      color: #e74c3c;
-      margin-bottom: 20px;
-    }
-
-    .blocked-title {
-      font-size: 2.1rem;
-      font-weight: 700;
-      color: #333;
-      margin-bottom: 12px;
-    }
-
-    .blocked-message {
-      font-size: 1.05rem;
-      color: #555;
-      margin-bottom: 25px;
-      line-height: 1.6;
-    }
-
-    .ref-code {
-      font-size: 0.95rem;
-      color: #999;
-      margin-bottom: 30px;
-      font-family: 'Courier New', monospace;
-    }
-
-    .back-btn {
-      display: inline-block;
-      padding: 14px 28px;
-      background-color: #e74c3c;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 1rem;
-      transition: background 0.3s ease;
-    }
-
-    .back-btn:hover {
-      background-color: #c0392b;
-    }
-
-    @media (max-width: 480px) {
       .blocked-container {
-        padding: 40px 20px;
+        background: white;
+        padding: 50px 40px;
+        border-radius: 16px;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.07);
+        text-align: center;
+        max-width: 480px;
+        width: 90%;
+        border-top: 6px solid #e74c3c;
       }
-      .blocked-title {
-        font-size: 1.8rem;
-      }
+
       .blocked-icon {
-        font-size: 3.5rem;
+        font-size: 4.5rem;
+        color: #e74c3c;
+        margin-bottom: 20px;
       }
-    }
-  </style>
-</head>
-<body>
-  <div class="blocked-container">
-    <div class="blocked-icon">
-      <i class="fas fa-shield-alt"></i>
-    </div>
-    <div class="blocked-title">Access Blocked</div>
-    <div class="blocked-message" id="blockedMessage">
-      Your access to this resource has been restricted due to security policy.<br />
-      If you believe this is an error, please contact support or your system administrator.
-    </div>
-    <div class="ref-code" id="refCode">
-      Reference Code: <strong>403-BLOCK-XXXX</strong>
-    </div>
-    <a href="/" class="back-btn"><i class="fas fa-arrow-left"></i> Return to Home</a>
-  </div>
 
-  <script>
-    function countryToFlagEmoji(countryCode) {
-      return countryCode
-        .toUpperCase()
-        .replace(/./g, char => String.fromCodePoint(127397 + char.charCodeAt()));
-    }
-
-    async function setBlockedInfo() {
-      try {
-        const res = await fetch('https://ipapi.co/json/');
-        const data = await res.json();
-
-        const country = data.country_name || "your region";
-        const code = data.country || "XX";
-        const ip = data.ip || "UNKNOWN";
-        const flag = countryToFlagEmoji(code);
-
-        const blockedMessage = document.getElementById("blockedMessage");
-        const refCode = document.getElementById("refCode");
-
-        blockedMessage.innerHTML = `${flag} Access from <strong>${country}</strong> is currently restricted due to regional security policy.<br>Please contact support if you believe this is a mistake.`;
-        refCode.innerHTML = `Reference Code: <strong>403-BLOCK-${code}-${ip}</strong>`;
-      } catch (err) {
-        document.getElementById("refCode").innerHTML = "Reference Code: <strong>403-BLOCK-UNK</strong>";
+      .blocked-title {
+        font-size: 2.1rem;
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 12px;
       }
-    }
 
-    setBlockedInfo();
-  </script>
-</body>
+      .blocked-message {
+        font-size: 1.05rem;
+        color: #555;
+        margin-bottom: 25px;
+        line-height: 1.6;
+      }
+
+      .ref-code {
+        font-size: 0.95rem;
+        color: #999;
+        margin-bottom: 30px;
+        font-family: "Courier New", monospace;
+      }
+
+      .back-btn {
+        display: inline-block;
+        padding: 14px 28px;
+        background-color: #e74c3c;
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: background 0.3s ease;
+      }
+
+      .back-btn:hover {
+        background-color: #c0392b;
+      }
+
+      @media (max-width: 480px) {
+        .blocked-container {
+          padding: 40px 20px;
+        }
+        .blocked-title {
+          font-size: 1.8rem;
+        }
+        .blocked-icon {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="blocked-container">
+      <div class="blocked-icon">
+        <i class="fas fa-shield-alt"></i>
+      </div>
+      <div class="blocked-title">Access Blocked</div>
+      <div class="blocked-message" id="blockedMessage">
+        Your access to this resource has been restricted due to security
+        policy.<br />
+        If you believe this is an error, please contact support or your system
+        administrator.
+      </div>
+      <div class="ref-code" id="refCode">
+        Reference Code: <strong>403-BLOCK-XXXX</strong>
+      </div>
+      <a href="/" class="back-btn"
+        ><i class="fas fa-arrow-left"></i> Return to Home</a
+      >
+    </div>
+
+    <script>
+      function countryToFlagEmoji(countryCode) {
+        return countryCode
+          .toUpperCase()
+          .replace(/./g, (char) =>
+            String.fromCodePoint(127397 + char.charCodeAt()),
+          );
+      }
+
+      async function setBlockedInfo() {
+        try {
+          const res = await fetch("https://ipapi.co/json/");
+          const data = await res.json();
+
+          const country = data.country_name || "your region";
+          const code = data.country || "XX";
+          const ip = data.ip || "UNKNOWN";
+          const flag = countryToFlagEmoji(code);
+
+          const blockedMessage = document.getElementById("blockedMessage");
+          const refCode = document.getElementById("refCode");
+
+          blockedMessage.innerHTML = `${flag} Access from <strong>${country}</strong> is currently restricted due to regional security policy.<br>Please contact support if you believe this is a mistake.`;
+          refCode.innerHTML = `Reference Code: <strong>403-BLOCK-${code}-${ip}</strong>`;
+        } catch (err) {
+          document.getElementById("refCode").innerHTML =
+            "Reference Code: <strong>403-BLOCK-UNK</strong>";
+        }
+      }
+
+      setBlockedInfo();
+    </script>
+  </body>
 </html>

@@ -1,8 +1,8 @@
-const WEBSITE_URL = 'https://fp.apiis.dpdns.org';
-const iframe = document.getElementById('website-frame');
-const loadingOverlay = document.getElementById('loadingOverlay');
+const WEBSITE_URL = "https://fp.apiis.dpdns.org";
+const iframe = document.getElementById("website-frame");
+const loadingOverlay = document.getElementById("loadingOverlay");
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   wakeUpThenLoad();
   setupIframeEvents();
 });
@@ -10,21 +10,20 @@ document.addEventListener('DOMContentLoaded', () => {
 function wakeUpThenLoad() {
   showLoadingOverlay();
 
-  fetch(WEBSITE_URL, { method: 'GET', mode: 'no-cors' })
-    .finally(() => {
-      iframe.src = WEBSITE_URL;
-    });
+  fetch(WEBSITE_URL, { method: "GET", mode: "no-cors" }).finally(() => {
+    iframe.src = WEBSITE_URL;
+  });
 }
 
 function setupIframeEvents() {
-  iframe.addEventListener('load', () => {
+  iframe.addEventListener("load", () => {
     setTimeout(() => {
       hideLoadingOverlay();
       iframe.focus();
     }, 1000);
   });
 
-  iframe.addEventListener('error', () => {
+  iframe.addEventListener("error", () => {
     showLoadingOverlay();
     setTimeout(() => {
       iframe.src = WEBSITE_URL;
@@ -33,19 +32,19 @@ function setupIframeEvents() {
 }
 
 function showLoadingOverlay() {
-  loadingOverlay.style.display = 'flex';
-  loadingOverlay.style.opacity = '1';
+  loadingOverlay.style.display = "flex";
+  loadingOverlay.style.opacity = "1";
 }
 
 function hideLoadingOverlay() {
-  loadingOverlay.style.opacity = '0';
+  loadingOverlay.style.opacity = "0";
   setTimeout(() => {
-    loadingOverlay.style.display = 'none';
+    loadingOverlay.style.display = "none";
   }, 500);
 }
 
-window.addEventListener('resize', () => {
+window.addEventListener("resize", () => {
   iframe.style.height = `${window.innerHeight}px`;
 });
 
-document.addEventListener('contextmenu', e => e.preventDefault());
+document.addEventListener("contextmenu", (e) => e.preventDefault());
