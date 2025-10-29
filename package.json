@@ -19,13 +19,13 @@
   "license": "ISC",
   "description": "Iframe For Fullpp Bot.",
   "dependencies": {
-    "express": "*",
-    "path": "*"
+    "express": "latest",
+    "path": "latest"
   },
   "devDependencies": {
-    "eslint": "*",
-    "eslint-config-prettier": "*",
-    "eslint-plugin-prettier": "*",
-    "prettier": "*"
+    "eslint": "latest",
+    "eslint-config-prettier": "latest",
+    "eslint-plugin-prettier": "latest",
+    "prettier": "latest"
   }
 }
